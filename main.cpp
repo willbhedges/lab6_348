@@ -1,14 +1,15 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#define MAX 100
 using namespace std;
 
 // Function prototypes
-void read_matrix(fstream &my_file, int matrix[100][100], int jump);
-void print_matrix(int matrix[100][100], int jump);
-void add_two_matrices(int matrix_one[100][100], int matrix_two[100][100], int sum_matrix[100][100], int jump);
-void multiply_two_matrices(int matrix_one[100][100], int matrix_two[100][100], int multiplied_matrix[100][100], int jump);
-void subtract_second_from_first(int matrix_one[100][100], int matrix_two[100][100], int sum_matrix[100][100], int jump);
+void read_matrix(fstream &my_file, int matrix[MAX][MAX], int jump);
+void print_matrix(int matrix[MAX][MAX], int jump);
+void add_two_matrices(int matrix_one[MAX][MAX], int matrix_two[MAX][MAX], int sum_matrix[MAX][MAX], int jump);
+void multiply_two_matrices(int matrix_one[MAX][MAX], int matrix_two[MAX][MAX], int multiplied_matrix[MAX][MAX], int jump);
+void subtract_second_from_first(int matrix_one[MAX][MAX], int matrix_two[MAX][MAX], int sum_matrix[MAX][MAX], int jump);
 
 int main()
 {  
@@ -16,11 +17,11 @@ int main()
     cout << "Lab #6: Matrix manipulation" << endl << endl;
     string file_name = "matrix_input.txt";
     int jump;
-    int matrix_one[100][100];
-    int matrix_two[100][100];
-    int sum_matrix[100][100];
-    int multiplied_matrix[100][100];
-    int subtraction[100][100];
+    int matrix_one[MAX][MAX];
+    int matrix_two[MAX][MAX];
+    int sum_matrix[MAX][MAX];
+    int multiplied_matrix[MAX][MAX];
+    int subtraction[MAX][MAX];
 
     fstream my_file;
     my_file.open(file_name, ios::in);
@@ -63,7 +64,7 @@ int main()
 }
 
 // Function definitions
-void read_matrix(fstream &my_file, int matrix[100][100], int jump)
+void read_matrix(fstream &my_file, int matrix[MAX][MAX], int jump)
 {
     int a = 0;
     int b = 0;
@@ -80,7 +81,7 @@ void read_matrix(fstream &my_file, int matrix[100][100], int jump)
     }
 }
 
-void print_matrix(int matrix[100][100], int jump)
+void print_matrix(int matrix[MAX][MAX], int jump)
 {
     int a = 0;
     int b = 0;
@@ -99,7 +100,7 @@ void print_matrix(int matrix[100][100], int jump)
     cout << "\n";
 }
 
-void add_two_matrices(int matrix_one[100][100], int matrix_two[100][100], int sum_matrix[100][100], int jump)
+void add_two_matrices(int matrix_one[MAX][MAX], int matrix_two[MAX][MAX], int sum_matrix[MAX][MAX], int jump)
 {
     int a = 0;
     int b = 0;
@@ -116,7 +117,7 @@ void add_two_matrices(int matrix_one[100][100], int matrix_two[100][100], int su
     }
 }
 
-void multiply_two_matrices(int matrix_one[100][100], int matrix_two[100][100], int multiplied_matrix[100][100], int jump)
+void multiply_two_matrices(int matrix_one[MAX][MAX], int matrix_two[MAX][MAX], int multiplied_matrix[MAX][MAX], int jump)
 {
     int a = 0;
     int b = 0;
@@ -140,7 +141,7 @@ void multiply_two_matrices(int matrix_one[100][100], int matrix_two[100][100], i
 }
 
 
-void subtract_second_from_first(int matrix_one[100][100], int matrix_two[100][100], int sum_matrix[100][100], int jump)
+void subtract_second_from_first(int matrix_one[MAX][MAX], int matrix_two[MAX][MAX], int sum_matrix[MAX][MAX], int jump)
 {
     int a = 0;
     int b = 0;
